@@ -3,25 +3,22 @@ function Nav() {
     <nav>
       <ul>
         <li>
-          <a herf="#">Home</a>
+          <a herf="/home">Home</a>
         </li>
         <li>
-          <a herf="#">About</a>
+          <a herf="/about">About</a>
         </li>
         <li>
-          <a herf="#">Menu</a>
+          <a herf="/menu">Menu</a>
         </li>
         <li>
-          <a herf="#">Menu</a>
+          <a herf="/reservations">Reservations</a>
         </li>
         <li>
-          <a herf="#">Reservations</a>
+          <a herf="/order-online">Order Online</a>
         </li>
         <li>
-          <a herf="#">Order Online</a>
-        </li>
-        <li>
-          <a herf="#">Login</a>
+          <a herf="/login">Login</a>
         </li>
       </ul>
     </nav>
