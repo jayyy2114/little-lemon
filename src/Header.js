@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "./image/Logo.svg";
 function Header() {
   return (
@@ -7,22 +8,22 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <a href="/home">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="/about">About</a>
+              <Link to="/About">About</Link>
             </li>
             <li>
-              <a href="/menu">Menu</a>
+              <Link to="/Menu">Menu</Link>
             </li>
             <li>
-              <a href="reservations">Reservations</a>
+              <Link to="/Reservations">Reservations</Link>
             </li>
             <li>
-              <a href="order online">Order Online</a>
+              <Link to="/Order">Order Online</Link>
             </li>
             <li>
-              <a href="login">Login</a>
+              <Link to="/Login">Login</Link>
             </li>
           </ul>
         </nav>
