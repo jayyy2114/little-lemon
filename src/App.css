@@ -205,3 +205,51 @@ footer {
   background-color: #e1c200;
   opacity: 0.9;
 }
+
+.booking-page {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 40px;
+}
+
+.booking-page h1 {
+  font-family: "Markazi Text", serif;
+  font-size: 2.5rem;
+  color: #495e57;
+  margin-bottom: 24px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.booking-form label {
+  font-weight: bold;
+  font-family: "Karla", sans-serif;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.booking-form button {
+  background-color: #f4ce14 !important;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 16px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.booking-form button:hover {
+  background-color: #e1c200;
+}

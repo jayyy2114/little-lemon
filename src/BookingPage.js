@@ -1,8 +1,76 @@
+import { useState } from "react";
+
 function BookingPage() {
+  const [formData, setFormData] = useState({
+    date: "",
+    time: "17:00",
+    guest: 1,
+    occasion: "Birthday",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Reservation confirmed for ${formData.date} at ${formData.time}!`);
+  };
+
   return (
-    <section className="bookingpage">
-      <h2>Booking Page</h2>
-    </section>
+    <div className="booking-page">
+      <h1>Reserve a Table</h1>
+      <form className="booking-form" onSubmit={handleSubmit}>
+        <label htmlFor="date">Choose date</label>
+        <input
+          type="date"
+          id="date"
+          name="date"
+          value={formData.date}
+          onChange={handleChange}
+          required
+        />
+
+        <label htmlFor="time">Choose Time</label>
+        <select
+          id="time"
+          name="time"
+          value={formData.time}
+          onChange={handleChange}
+        >
+          <option>17:00</option>
+          <option>18:00</option>
+          <option>19:00</option>
+          <option>20:00</option>
+          <option>21:00</option>
+          <option>22:00</option>
+        </select>
+
+        <label htmlFor="guest">Number of guest </label>
+        <input
+          type="number"
+          id="guest"
+          name="guest"
+          min="1"
+          max="10"
+          value={formData.guests}
+          onChange={handleChange}
+          required
+        />
+
+        <label htmlFor="occasion">Occasion</label>
+        <select
+          id="occasion"
+          name="occasion"
+          value={formData.occasion}
+          onChange={handleChange}
+        >
+          <option>Birthday </option>
+          <option>Anniversary</option>
+        </select>
+        <button type="submit">Make Your Reservation</button>
+      </form>
+    </div>
   );
 }
 
