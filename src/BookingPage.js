@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function BookingPage({ availableTimes, dispatch }) {
+function BookingPage({ availableTimes, dispatch, submitForm }) {
   const [formData, setFormData] = useState({
     date: "",
     time: "17:00",
@@ -14,7 +14,7 @@ function BookingPage({ availableTimes, dispatch }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Reservation confirmed for ${formData.date} at ${formData.time}!`);
+    submitForm(formData);
   };
 
   return (
