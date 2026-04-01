@@ -1,9 +1,10 @@
 import { useReducer } from "react";
 import { Routes, Route } from "react-router-dom";
+import { initializeTimes, updateTimes } from "./utils";
 import Homepage from "./Homepage";
 import BookingPage from "./BookingPage";
 
-function updateTimes(state, action) {
+export function updateTimes(state, action) {
   switch (action.type) {
     case "UPDATE_TIMES":
       return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
@@ -12,7 +13,7 @@ function updateTimes(state, action) {
   }
 }
 
-function initializeTimes() {
+export function initializeTimes() {
   return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
 }
 
