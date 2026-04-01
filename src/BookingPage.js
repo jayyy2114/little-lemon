@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function BookingPage() {
+function BookingPage({ availableTimes, dispatch }) {
   const [formData, setFormData] = useState({
     date: "",
     time: "17:00",
@@ -36,14 +36,14 @@ function BookingPage() {
           id="time"
           name="time"
           value={formData.time}
-          onChange={handleChange}
+          onChange={(e) => {
+            handleChange(e);
+            dispatch({ type: "UPDATE_TIMES", date: e.target.value });
+          }}
         >
-          <option>17:00</option>
-          <option>18:00</option>
-          <option>19:00</option>
-          <option>20:00</option>
-          <option>21:00</option>
-          <option>22:00</option>
+          {availableTimes.map((time) => (
+            <option key={time}>{time}</option>
+          ))}
         </select>
 
         <label htmlFor="guest">Number of guest </label>
