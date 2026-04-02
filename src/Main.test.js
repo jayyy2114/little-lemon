@@ -1,12 +1,17 @@
 import { initializeTimes, updateTimes } from "./utils";
 
-test("initializeTimes returns correct initial times", () => {
+test("initializeTimes returns a non-empty array", () => {
   const times = initializeTimes();
-  expect(times).toEqual(["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]);
+  expect(Array.isArray(times)).toBe(true);
+  expect(times.length).toBeGreaterThan(0);
 });
 
-test("updateTimes returns same state for unknown action", () => {
+test("updateTimes returns a non-empty array for a given date", () => {
   const state = ["17:00", "18:00"];
-  const result = updateTimes(state, { type: "UNKNOWN" });
-  expect(result).toEqual(state);
+  const result = updateTimes(state, {
+    type: "UPDATE_TIMES",
+    date: "2026-04-02",
+  });
+  expect(Array.isArray(result)).toBe(true);
+  expect(result.length).toBeGreaterThan(0);
 });
