@@ -16,6 +16,8 @@ function BookingPage({ availableTimes, dispatch, submitForm }) {
     e.preventDefault();
     submitForm(formData);
   };
+  const isFormValid =
+    formData.date !== "" && formData.guests >= 1 && formData.guests <= 10;
 
   return (
     <div className="booking-page">
@@ -49,8 +51,8 @@ function BookingPage({ availableTimes, dispatch, submitForm }) {
         <label htmlFor="guest">Number of guest </label>
         <input
           type="number"
-          id="guest"
-          name="guest"
+          id="guests"
+          name="guests"
           min="1"
           max="10"
           value={formData.guests}
@@ -68,7 +70,16 @@ function BookingPage({ availableTimes, dispatch, submitForm }) {
           <option>Birthday </option>
           <option>Anniversary</option>
         </select>
-        <button type="submit">Make Your Reservation</button>
+        <button
+          type="submit"
+          disabled={!isFormValid}
+          style={{
+            opacity: isFormValid ? 1 : 0.5,
+            cursor: isFormValid ? "pointer" : "not-allowed",
+          }}
+        >
+          Make Your Reservation
+        </button>
       </form>
     </div>
   );
