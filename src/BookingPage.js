@@ -73,6 +73,7 @@ function BookingPage({ availableTimes, dispatch, submitForm }) {
         <button
           type="submit"
           disabled={!isFormValid}
+          aria-label="On Click"
           style={{
             opacity: isFormValid ? 1 : 0.5,
             cursor: isFormValid ? "pointer" : "not-allowed",
