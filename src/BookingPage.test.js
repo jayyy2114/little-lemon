@@ -37,3 +37,15 @@ test("guests input has min and max attributes", () => {
   expect(guestsInput).toHaveAttribute("min", "1");
   expect(guestsInput).toHaveAttribute("max", "10");
 });
+
+test("submit button is disabled when date is empty", () => {
+  render(
+    <BookingPage
+      availableTimes={["17:00"]}
+      dispatch={() => {}}
+      submitForm={() => {}}
+    />,
+  );
+  const button = screen.getByText("Make Your Reservation");
+  expect(button).toBeDisabled();
+});
